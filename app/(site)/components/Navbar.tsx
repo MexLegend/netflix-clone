@@ -3,7 +3,7 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
 import { BellIcon, MagnifyingGlassIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { User } from '@prisma/client';
-import useCurrentUser from '@/app/hooks/useCurrentUser';
+import useCurrentUser from '@/app/hooks/useCurrentUserStore';
 
 import AccountMenu from './AccountMenu';
 import MobileMenu from './MobileMenu';
@@ -25,7 +25,7 @@ const Navbar: FC<NavbarProps> = ({ currentUserProp }) => {
 
     useEffect(() => {
         if (currentUserProp && currentUser === null) setCurrentUser(currentUserProp);
-    }, []);
+    }, [currentUser, currentUserProp, setCurrentUser]);
 
     useEffect(() => {
         const handleScroll = () => {

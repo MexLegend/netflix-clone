@@ -7,7 +7,7 @@ interface CurrentUserStore {
     setUser: (currentUser: User | null) => void;
 }
 
-const useCurrentUser = create<CurrentUserStore>()(
+const useCurrentUserStore = create<CurrentUserStore>()(
     persist(
         (set) => ({
             currentUser: null,
@@ -17,4 +17,4 @@ const useCurrentUser = create<CurrentUserStore>()(
     }
     ));
 
-export default useCurrentUser;
+export default useCurrentUserStore;

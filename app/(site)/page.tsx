@@ -6,28 +6,26 @@ import getMovies from '../actions/getMovies';
 import Navbar from './components/Navbar';
 import generateMovies from '../actions/generateMovies';
 import Billboard from './components/Billboard';
-import MoviesList from './components/MoviesList';
-// import InfoModal from '@/components/InfoModal';
+import MoviesContainer from './components/MoviesContainer';
+import InfoModal from '@/app/components/InfoModal';
+import useInfoModalStore from '../hooks/useInfoModalStore';
 
 const Home = async () => {
 
     const currentUser = await getCurrentUser();
     const favorites = await getFavorites();
     const movies = await getMovies();
+    // const { isOpen, closeModal } = useInfoModalStore();
 
     // Insert Seed Of Movies
     // await generateMovies();
 
     return (
         <>
-            {/* <InfoModal visible={isOpen} onClose={closeModal} /> */}
+            <InfoModal />
             <Navbar currentUserProp={currentUser as User} />
             <Billboard />
-            <div className="pb-40">
-                <MoviesList title="Trending Now" movies={movies} />
-                <MoviesList title="My List" movies={favorites} />
-                {/* {children} */}
-            </div>
+            <MoviesContainer favorites={favorites} movies={movies} />
         </>
     )
 }

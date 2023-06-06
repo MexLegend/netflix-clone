@@ -1,7 +1,7 @@
 import prisma from "@/app/libs/prismadb";
 import getCurrentUser from "./getCurrentUser";
 
-const getMovie = async () => {
+const getRandomMovie = async () => {
 
     const currentUser = await getCurrentUser();
 
@@ -25,4 +25,4 @@ const getMovie = async () => {
     }
 };
 
-export default getMovie;
+export default getRandomMovie;

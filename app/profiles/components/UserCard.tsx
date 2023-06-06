@@ -3,7 +3,7 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
-import useCurrentUser from "@/app/hooks/useCurrentUser";
+import useCurrentUser from "@/app/hooks/useCurrentUserStore";
 
 const images = [
     '/images/default-blue.png',

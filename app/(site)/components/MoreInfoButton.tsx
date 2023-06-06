@@ -3,18 +3,20 @@
 import React, { useCallback } from 'react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import useInfoModalStore from '@/app/hooks/useInfoModalStore';
+import { Movie } from '@prisma/client';
 
-interface PlayButtonProps {
-    movieId: string;
+interface ButtonProps {
+    movie: Movie;
 }
 
-const MoreInfoButton: React.FC<PlayButtonProps> = ({ movieId }) => {
+const MoreInfoButton: React.FC<ButtonProps> = ({ movie }) => {
 
-    const { openModal } = useInfoModalStore();
+    const { setIsOpen, setMovie } = useInfoModalStore();
 
     const handleOpenModal = useCallback(() => {
-        openModal(movieId);
-    }, [openModal, movieId]);
+        setIsOpen(true);
+        setMovie(movie);
+    }, [setIsOpen, setMovie, movie]);
 
     return (
         <button

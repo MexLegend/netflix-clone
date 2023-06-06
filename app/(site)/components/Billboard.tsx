@@ -1,7 +1,7 @@
 import React from 'react';
 
-import getMovie from '@/app/actions/getMovie';
-import PlayButton from './PlayButton';
+import getMovie from '@/app/actions/getRandomMovie';
+import PlayButton from '../../components/PlayButton';
 import MoreInfoButton from './MoreInfoButton';
 
 const Billboard: React.FC = async () => {
@@ -20,7 +20,7 @@ const Billboard: React.FC = async () => {
                 </p>
                 <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
                     <PlayButton movieId={movie!.id} />
-                    <MoreInfoButton movieId={movie!.id} />
+                    <MoreInfoButton movie={movie!} />
                 </div>
             </div>
         </div>
