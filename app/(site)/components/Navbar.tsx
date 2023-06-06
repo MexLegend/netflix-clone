@@ -1,33 +1,34 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { BellIcon, MagnifyingGlassIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import useCurrentUser from '@/app/hooks/useCurrentUser';
 import { User } from '@prisma/client';
+import useCurrentUser from '@/app/hooks/useCurrentUser';
 
 import AccountMenu from './AccountMenu';
 import MobileMenu from './MobileMenu';
 import NavbarItem from './NavbarItem';
 
 interface NavbarProps {
-    currentUser: User | null;
+    currentUserProp: User;
 }
 
 const TOP_OFFSET = 66;
 
-const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
-    const [setUser, user] = useCurrentUser((state) => [state.setUser, state.currentUser])
+const Navbar: FC<NavbarProps> = ({ currentUserProp }) => {
+
+    const [setCurrentUser, currentUser] = useCurrentUser((state) => [state.setUser, state.currentUser]);
+
     const [showAccountMenu, setShowAccountMenu] = useState(false);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [showBackground, setShowBackground] = useState(false);
 
     useEffect(() => {
-        if (currentUser && user === null) setUser(currentUser);
+        if (currentUserProp && currentUser === null) setCurrentUser(currentUserProp);
     }, []);
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY)
             if (window.scrollY >= TOP_OFFSET) {
                 setShowBackground(true)
             } else {
@@ -79,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
                             <img src="/images/default-blue.png" alt="" />
                         </div>
                         <ChevronDownIcon className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} />
-                        <AccountMenu visible={showAccountMenu} />
+                        <AccountMenu visible={showAccountMenu} currentUser={currentUser as User} />
                     </div>
                 </div>
             </div>
