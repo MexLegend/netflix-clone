@@ -8,6 +8,8 @@ const Billboard: React.FC = async () => {
 
     const movie = await getMovie();
 
+    if (!movie) return <></>;
+
     return (
         <div className="relative h-[56.25vw]">
             <video poster={movie?.thumbnailUrl} className="w-full h-[56.25vw] object-cover brightness-[60%] transition duration-500" autoPlay muted loop src={movie?.videoUrl}></video>
@@ -19,8 +21,8 @@ const Billboard: React.FC = async () => {
                     {movie?.description}
                 </p>
                 <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
-                    <PlayButton movieId={movie!.id} />
-                    <MoreInfoButton movie={movie!} />
+                    <PlayButton movieId={movie?.id} />
+                    <MoreInfoButton movie={movie} />
                 </div>
             </div>
         </div>
