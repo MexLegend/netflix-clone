@@ -46,4 +46,4 @@ $ npm run start
 
 ## Built With
 
-- Angular 16.1.0
+- Nextjs 13.4.3
