@@ -1,6 +1,6 @@
 # Real State
 
-<img src="https://res.cloudinary.com/devmexsoft/image/upload/v1692043403/Projects%20Thumbnails/Video_Viewer_Thumbnail_hg62c1.png" height="400px"/>
+<img src="https://res.cloudinary.com/devmexsoft/image/upload/v1692043403/Projects%20Thumbnails/Video_Viewer_Thumbnail_hg62c1.png" height="600px"/>
 
 ### [Demo](https://video-viewer-teal.vercel.app)
 
