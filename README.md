@@ -17,8 +17,6 @@ Install the dependencies:
 ```sh
 $ pnpm i
 # or
-$ yarn
-# or
 $ npm i
 ```
 
@@ -37,11 +35,9 @@ GOOGLE_CLIENT_SECRET=
 Start the app
 
 ```sh
-$ pnpm start
+$ pnpm dev
 # or
-$ yarn start
-# or
-$ npm run start
+$ npm run dev
 ```
 
 ## Built With
