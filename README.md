@@ -42,4 +42,8 @@ $ npm run dev
 
 ## Built With
 
-- Nextjs 13.4.3
+- Nextjs 13
+- Prisma
+- MongoDB
+- Tailwind
+- Zustand
