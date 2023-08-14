@@ -7,7 +7,7 @@
 ## Cloning the repository
 
 ```shell
-git clone https://github.com/MexLegend/angular-real-state-app.git
+git clone https://github.com/MexLegend/netflix-clone.git
 ```
 
 ## Getting Started
@@ -25,10 +25,13 @@ $ npm i
 Setup .environment file
 
 ```js
-URI: 
-MAPBOX_TOKEN: 
-CLOUDINARY_NAME:
-CLOUDINARY_PRESET:
+DATABASE_URL=
+NEXTAUTH_SECRET=
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+GITHUB_ID=
+GITHUB_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 ```
 
 Start the app
