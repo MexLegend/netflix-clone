@@ -22,7 +22,7 @@ $ yarn
 $ npm i
 ```
 
-Setup .environment file
+Setup .env file
 
 ```js
 DATABASE_URL=
